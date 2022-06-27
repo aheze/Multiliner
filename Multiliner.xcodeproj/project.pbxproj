@@ -14,7 +14,7 @@
 		3C08D443286A3F3D0068FA83 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C08D442286A3F3D0068FA83 /* Cocoa.framework */; };
 		3C08D448286A3F3D0068FA83 /* SourceEditorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C08D447286A3F3D0068FA83 /* SourceEditorExtension.swift */; };
 		3C08D44A286A3F3D0068FA83 /* SourceEditorCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C08D449286A3F3D0068FA83 /* SourceEditorCommand.swift */; };
-		3C08D44F286A3F3D0068FA83 /* MultilinerExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 3C08D440286A3F3D0068FA83 /* MultilinerExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		3C08D44F286A3F3D0068FA83 /* Multiliner.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 3C08D440286A3F3D0068FA83 /* Multiliner.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		3C3D5B63286A40E900B92FEA /* XcodeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C08D444286A3F3D0068FA83 /* XcodeKit.framework */; };
 		3C3D5B64286A40E900B92FEA /* XcodeKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3C08D444286A3F3D0068FA83 /* XcodeKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
@@ -36,7 +36,7 @@
 			dstPath = "";
 			dstSubfolderSpec = 13;
 			files = (
-				3C08D44F286A3F3D0068FA83 /* MultilinerExtension.appex in Embed App Extensions */,
+				3C08D44F286A3F3D0068FA83 /* Multiliner.appex in Embed App Extensions */,
 			);
 			name = "Embed App Extensions";
 			runOnlyForDeploymentPostprocessing = 0;
@@ -55,13 +55,13 @@
 /* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
-		3C08D42A286A3F160068FA83 /* Multiliner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Multiliner.app; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C08D42A286A3F160068FA83 /* Multiliner App.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "Multiliner App.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C08D42D286A3F160068FA83 /* MultilinerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultilinerApp.swift; sourceTree = "<group>"; };
 		3C08D42F286A3F160068FA83 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3C08D431286A3F190068FA83 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3C08D434286A3F190068FA83 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3C08D436286A3F190068FA83 /* Multiliner.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Multiliner.entitlements; sourceTree = "<group>"; };
-		3C08D440286A3F3D0068FA83 /* MultilinerExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MultilinerExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C08D440286A3F3D0068FA83 /* Multiliner.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Multiliner.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C08D442286A3F3D0068FA83 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		3C08D444286A3F3D0068FA83 /* XcodeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XcodeKit.framework; path = Library/Frameworks/XcodeKit.framework; sourceTree = DEVELOPER_DIR; };
 		3C08D447286A3F3D0068FA83 /* SourceEditorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceEditorExtension.swift; sourceTree = "<group>"; };
@@ -103,8 +103,8 @@
 		3C08D42B286A3F160068FA83 /* Products */ = {
 			isa = PBXGroup;
 			children = (
-				3C08D42A286A3F160068FA83 /* Multiliner.app */,
-				3C08D440286A3F3D0068FA83 /* MultilinerExtension.appex */,
+				3C08D42A286A3F160068FA83 /* Multiliner App.app */,
+				3C08D440286A3F3D0068FA83 /* Multiliner.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -168,7 +168,7 @@
 			);
 			name = Multiliner;
 			productName = Multiliner;
-			productReference = 3C08D42A286A3F160068FA83 /* Multiliner.app */;
+			productReference = 3C08D42A286A3F160068FA83 /* Multiliner App.app */;
 			productType = "com.apple.product-type.application";
 		};
 		3C08D43F286A3F3D0068FA83 /* MultilinerExtension */ = {
@@ -186,7 +186,7 @@
 			);
 			name = MultilinerExtension;
 			productName = MultilinerExtension;
-			productReference = 3C08D440286A3F3D0068FA83 /* MultilinerExtension.appex */;
+			productReference = 3C08D440286A3F3D0068FA83 /* Multiliner.appex */;
 			productType = "com.apple.product-type.xcode-extension";
 		};
 /* End PBXNativeTarget section */
@@ -411,7 +411,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.aheze.Multiliner;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Multiliner App";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 			};
@@ -440,7 +440,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.aheze.Multiliner;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = "Multiliner App";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 			};
@@ -467,7 +467,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.aheze.Multiliner.MultilinerExtension;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Multiliner;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
@@ -495,7 +495,7 @@
 				);
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.aheze.Multiliner.MultilinerExtension;
-				PRODUCT_NAME = "$(TARGET_NAME)";
+				PRODUCT_NAME = Multiliner;
 				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
