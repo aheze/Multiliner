@@ -11,11 +11,14 @@ import XcodeKit
 
 public enum FormatError: Error, CustomStringConvertible, LocalizedError, CustomNSError {
     case noSelection
+    case invalidSelection
 
     public var description: String {
         switch self {
         case .noSelection:
             return "No selection."
+        case .invalidSelection:
+            return "Selection must be bounded by `()` or `[]`."
         }
     }
 
@@ -43,22 +46,34 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
             return
         }
 
+        /// Store the current lines of the entire file.
         let oldLines = getLines(from: invocation.buffer)
 
+        /// The selection's starting tab.
+        /// Example:
+        //     **input**  `    init()`
+        //     **output** `    `
         let startTab = oldLines[range.start.line]
             .prefix { $0 == " " }
 
+        /// The width of a single tab, usually `    `.
         let tab = String(repeating: " ", count: invocation.buffer.indentationWidth)
-        let parameterTab = startTab + tab
+        
+        /// The tab that prefixes each parameter/array element.
+        let contentTab = startTab + tab
 
+        /// The entire text of the file.
         let text = getText(from: range, buffer: invocation.buffer)
 
+        /// Get the opening and closing indices if the selected text contains parameters.
         let openingParenthesisIndex = text.firstIndex(of: "(")
         let closingParenthesisIndex = text.lastIndex(of: ")")
 
+        /// Get the opening and closing array element if the selected text is an array.
         let openingArrayIndex = text.firstIndex(of: "[")
         let closingArrayIndex = text.lastIndex(of: "]")
 
+        /// Determine if the selection was an array or a set of parameters.
         let openingBracesIndex: String.Index? = [openingParenthesisIndex, openingArrayIndex]
             .compactMap { $0 }
             .sorted()
@@ -69,34 +84,44 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
             .sorted()
             .last
 
-        guard let openingBracesIndex = openingBracesIndex, let closingBracesIndex = closingBracesIndex else { return }
+        /// Make sure there's an opening and closing index.
+        guard let openingBracesIndex = openingBracesIndex, let closingBracesIndex = closingBracesIndex else {
+            completionHandler(FormatError.invalidSelection)
+            return
+        }
 
-        let openingParametersIndex = text.index(after: openingBracesIndex)
-        let closingParametersIndex = closingBracesIndex
+        /// Skip the opening `(` or `[`.
+        let openingContentIndex = text.index(after: openingBracesIndex)
+        let closingContentIndex = closingBracesIndex
 
-        let parametersString = text[openingParametersIndex ..< closingParametersIndex]
-        let parameters = parametersString
+        /// The text inside the braces.
+        let contentsString = text[openingContentIndex ..< closingContentIndex]
+        let contents = contentsString
             .components(separatedBy: ",")
 
-        let parametersFormatted: [String] = parameters.enumerated()
+        /// Format the content by adding spaces and commas.
+        let contentsFormatted: [String] = contents.enumerated()
             .map { index, element in
                 let line = element.trimmingCharacters(in: .whitespaces)
-                if index == parameters.indices.last {
-                    return parameterTab + line
+                if index == contents.indices.last {
+                    return contentTab + line
                 } else {
-                    return parameterTab + line + ","
+                    return contentTab + line + ","
                 }
             }
 
-        let openingString = text[..<openingParametersIndex]
-        let closingString = startTab + text[closingBracesIndex...] /// add start tab padding
+        /// The string that comes before the selection.
+        let openingString = text[..<openingContentIndex]
+        let closingString = startTab + text[closingContentIndex...] /// add start tab padding
 
-        let newLines = [openingString] + parametersFormatted + [closingString]
+        /// The new lines of the entire file.
+        let newLines = [openingString] + contentsFormatted + [closingString]
 
         let openingLines = oldLines[..<range.start.line]
         let closingLines = oldLines[(range.end.line + 1)...]
         let lines = Array(openingLines) + Array(newLines) + Array(closingLines)
 
+        /// Update the source code.
         invocation.buffer.lines.removeAllObjects()
         invocation.buffer.lines.addObjects(from: lines)
 
