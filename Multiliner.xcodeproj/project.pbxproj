@@ -11,7 +11,48 @@
 		3C08D430286A3F160068FA83 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C08D42F286A3F160068FA83 /* ContentView.swift */; };
 		3C08D432286A3F190068FA83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C08D431286A3F190068FA83 /* Assets.xcassets */; };
 		3C08D435286A3F190068FA83 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C08D434286A3F190068FA83 /* Preview Assets.xcassets */; };
+		3C08D443286A3F3D0068FA83 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C08D442286A3F3D0068FA83 /* Cocoa.framework */; };
+		3C08D448286A3F3D0068FA83 /* SourceEditorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C08D447286A3F3D0068FA83 /* SourceEditorExtension.swift */; };
+		3C08D44A286A3F3D0068FA83 /* SourceEditorCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C08D449286A3F3D0068FA83 /* SourceEditorCommand.swift */; };
+		3C08D44F286A3F3D0068FA83 /* MultilinerExtension.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 3C08D440286A3F3D0068FA83 /* MultilinerExtension.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
+		3C3D5B63286A40E900B92FEA /* XcodeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C08D444286A3F3D0068FA83 /* XcodeKit.framework */; };
+		3C3D5B64286A40E900B92FEA /* XcodeKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3C08D444286A3F3D0068FA83 /* XcodeKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
 /* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		3C08D44D286A3F3D0068FA83 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = 3C08D422286A3F160068FA83 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = 3C08D43F286A3F3D0068FA83;
+			remoteInfo = MultilinerExtension;
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		3C08D453286A3F3D0068FA83 /* Embed App Extensions */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 13;
+			files = (
+				3C08D44F286A3F3D0068FA83 /* MultilinerExtension.appex in Embed App Extensions */,
+			);
+			name = "Embed App Extensions";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3C3D5B65286A40E900B92FEA /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				3C3D5B64286A40E900B92FEA /* XcodeKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
 
 /* Begin PBXFileReference section */
 		3C08D42A286A3F160068FA83 /* Multiliner.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = Multiliner.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -20,6 +61,13 @@
 		3C08D431286A3F190068FA83 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		3C08D434286A3F190068FA83 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3C08D436286A3F190068FA83 /* Multiliner.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Multiliner.entitlements; sourceTree = "<group>"; };
+		3C08D440286A3F3D0068FA83 /* MultilinerExtension.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = MultilinerExtension.appex; sourceTree = BUILT_PRODUCTS_DIR; };
+		3C08D442286A3F3D0068FA83 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
+		3C08D444286A3F3D0068FA83 /* XcodeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XcodeKit.framework; path = Library/Frameworks/XcodeKit.framework; sourceTree = DEVELOPER_DIR; };
+		3C08D447286A3F3D0068FA83 /* SourceEditorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceEditorExtension.swift; sourceTree = "<group>"; };
+		3C08D449286A3F3D0068FA83 /* SourceEditorCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceEditorCommand.swift; sourceTree = "<group>"; };
+		3C08D44B286A3F3D0068FA83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		3C08D44C286A3F3D0068FA83 /* MultilinerExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MultilinerExtension.entitlements; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -30,6 +78,15 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3C08D43D286A3F3D0068FA83 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C08D443286A3F3D0068FA83 /* Cocoa.framework in Frameworks */,
+				3C3D5B63286A40E900B92FEA /* XcodeKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
@@ -37,6 +94,8 @@
 			isa = PBXGroup;
 			children = (
 				3C08D42C286A3F160068FA83 /* Multiliner */,
+				3C08D446286A3F3D0068FA83 /* MultilinerExtension */,
+				3C08D441286A3F3D0068FA83 /* Frameworks */,
 				3C08D42B286A3F160068FA83 /* Products */,
 			);
 			sourceTree = "<group>";
@@ -45,6 +104,7 @@
 			isa = PBXGroup;
 			children = (
 				3C08D42A286A3F160068FA83 /* Multiliner.app */,
+				3C08D440286A3F3D0068FA83 /* MultilinerExtension.appex */,
 			);
 			name = Products;
 			sourceTree = "<group>";
@@ -69,6 +129,26 @@
 			path = "Preview Content";
 			sourceTree = "<group>";
 		};
+		3C08D441286A3F3D0068FA83 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				3C08D442286A3F3D0068FA83 /* Cocoa.framework */,
+				3C08D444286A3F3D0068FA83 /* XcodeKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		3C08D446286A3F3D0068FA83 /* MultilinerExtension */ = {
+			isa = PBXGroup;
+			children = (
+				3C08D447286A3F3D0068FA83 /* SourceEditorExtension.swift */,
+				3C08D449286A3F3D0068FA83 /* SourceEditorCommand.swift */,
+				3C08D44B286A3F3D0068FA83 /* Info.plist */,
+				3C08D44C286A3F3D0068FA83 /* MultilinerExtension.entitlements */,
+			);
+			path = MultilinerExtension;
+			sourceTree = "<group>";
+		};
 /* End PBXGroup section */
 
 /* Begin PBXNativeTarget section */
@@ -79,15 +159,35 @@
 				3C08D426286A3F160068FA83 /* Sources */,
 				3C08D427286A3F160068FA83 /* Frameworks */,
 				3C08D428286A3F160068FA83 /* Resources */,
+				3C08D453286A3F3D0068FA83 /* Embed App Extensions */,
 			);
 			buildRules = (
 			);
 			dependencies = (
+				3C08D44E286A3F3D0068FA83 /* PBXTargetDependency */,
 			);
 			name = Multiliner;
 			productName = Multiliner;
 			productReference = 3C08D42A286A3F160068FA83 /* Multiliner.app */;
 			productType = "com.apple.product-type.application";
+		};
+		3C08D43F286A3F3D0068FA83 /* MultilinerExtension */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = 3C08D450286A3F3D0068FA83 /* Build configuration list for PBXNativeTarget "MultilinerExtension" */;
+			buildPhases = (
+				3C08D43C286A3F3D0068FA83 /* Sources */,
+				3C08D43D286A3F3D0068FA83 /* Frameworks */,
+				3C08D43E286A3F3D0068FA83 /* Resources */,
+				3C3D5B65286A40E900B92FEA /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = MultilinerExtension;
+			productName = MultilinerExtension;
+			productReference = 3C08D440286A3F3D0068FA83 /* MultilinerExtension.appex */;
+			productType = "com.apple.product-type.xcode-extension";
 		};
 /* End PBXNativeTarget section */
 
@@ -100,6 +200,9 @@
 				LastUpgradeCheck = 1330;
 				TargetAttributes = {
 					3C08D429286A3F160068FA83 = {
+						CreatedOnToolsVersion = 13.3;
+					};
+					3C08D43F286A3F3D0068FA83 = {
 						CreatedOnToolsVersion = 13.3;
 					};
 				};
@@ -118,6 +221,7 @@
 			projectRoot = "";
 			targets = (
 				3C08D429286A3F160068FA83 /* Multiliner */,
+				3C08D43F286A3F3D0068FA83 /* MultilinerExtension */,
 			);
 		};
 /* End PBXProject section */
@@ -129,6 +233,13 @@
 			files = (
 				3C08D435286A3F190068FA83 /* Preview Assets.xcassets in Resources */,
 				3C08D432286A3F190068FA83 /* Assets.xcassets in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		3C08D43E286A3F3D0068FA83 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -144,7 +255,24 @@
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
+		3C08D43C286A3F3D0068FA83 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				3C08D448286A3F3D0068FA83 /* SourceEditorExtension.swift in Sources */,
+				3C08D44A286A3F3D0068FA83 /* SourceEditorCommand.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
 /* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		3C08D44E286A3F3D0068FA83 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = 3C08D43F286A3F3D0068FA83 /* MultilinerExtension */;
+			targetProxy = 3C08D44D286A3F3D0068FA83 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
 
 /* Begin XCBuildConfiguration section */
 		3C08D437286A3F190068FA83 /* Debug */ = {
@@ -263,9 +391,11 @@
 		3C08D43A286A3F190068FA83 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Multiliner/Multiliner.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -290,9 +420,11 @@
 		3C08D43B286A3F190068FA83 /* Release */ = {
 			isa = XCBuildConfiguration;
 			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Multiliner/Multiliner.entitlements;
+				CODE_SIGN_IDENTITY = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
@@ -309,6 +441,62 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.aheze.Multiliner;
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Release;
+		};
+		3C08D451286A3F3D0068FA83 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = MultilinerExtension/MultilinerExtension.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YA533DMD5J;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MultilinerExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MultilinerExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.aheze.Multiliner.MultilinerExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_EMIT_LOC_STRINGS = YES;
+				SWIFT_VERSION = 5.0;
+			};
+			name = Debug;
+		};
+		3C08D452286A3F3D0068FA83 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				CODE_SIGN_ENTITLEMENTS = MultilinerExtension/MultilinerExtension.entitlements;
+				CODE_SIGN_IDENTITY = "Apple Development";
+				CODE_SIGN_STYLE = Automatic;
+				COMBINE_HIDPI_IMAGES = YES;
+				CURRENT_PROJECT_VERSION = 1;
+				DEVELOPMENT_TEAM = YA533DMD5J;
+				ENABLE_HARDENED_RUNTIME = YES;
+				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_FILE = MultilinerExtension/Info.plist;
+				INFOPLIST_KEY_CFBundleDisplayName = MultilinerExtension;
+				INFOPLIST_KEY_NSHumanReadableCopyright = "";
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/../Frameworks",
+					"@executable_path/../../../../Frameworks",
+				);
+				MARKETING_VERSION = 1.0;
+				PRODUCT_BUNDLE_IDENTIFIER = com.aheze.Multiliner.MultilinerExtension;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 			};
@@ -331,6 +519,15 @@
 			buildConfigurations = (
 				3C08D43A286A3F190068FA83 /* Debug */,
 				3C08D43B286A3F190068FA83 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		3C08D450286A3F3D0068FA83 /* Build configuration list for PBXNativeTarget "MultilinerExtension" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				3C08D451286A3F3D0068FA83 /* Debug */,
+				3C08D452286A3F3D0068FA83 /* Release */,
 			);
 			defaultConfigurationIsVisible = 0;
 			defaultConfigurationName = Release;
