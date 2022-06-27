@@ -9,11 +9,11 @@
 import Foundation
 import XcodeKit
 
-public enum FormatError: Error, CustomStringConvertible, LocalizedError, CustomNSError {
+enum FormatError: Error, CustomStringConvertible, LocalizedError, CustomNSError {
     case noSelection
     case invalidSelection
 
-    public var description: String {
+    var description: String {
         switch self {
         case .noSelection:
             return "No selection."
@@ -22,29 +22,35 @@ public enum FormatError: Error, CustomStringConvertible, LocalizedError, CustomN
         }
     }
 
-    public var localizedDescription: String {
+    var localizedDescription: String {
         return "Error: \(description)."
     }
 
-    public var errorUserInfo: [String: Any] {
+    var errorUserInfo: [String: Any] {
         return [NSLocalizedDescriptionKey: localizedDescription]
     }
 }
 
+enum SelectionKind {
+    case parameters
+    case array
+}
 
 class SourceEditorCommand: NSObject, XCSourceEditorCommand {
-    
     /// The `Format Selection` command.
     func perform(with invocation: XCSourceEditorCommandInvocation, completionHandler: @escaping (Error?) -> Void) {
-
         /// Get the selection first.
         guard
             let selection = invocation.buffer.selections.firstObject,
-            let range = selection as? XCSourceTextRange
+            var range = selection as? XCSourceTextRange
         else {
             completionHandler(FormatError.noSelection)
             return
         }
+
+        /// It's possible that the user selected the last "extra" line too.
+        if range.start.line > invocation.buffer.lines.count - 1 { range.start.line -= 1 }
+        if range.end.line > invocation.buffer.lines.count - 1 { range.end.line -= 1 }
 
         /// Store the current lines of the entire file.
         let oldLines = getLines(from: invocation.buffer)
@@ -58,7 +64,7 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
 
         /// The width of a single tab, usually `    `.
         let tab = String(repeating: " ", count: invocation.buffer.indentationWidth)
-        
+
         /// The tab that prefixes each parameter/array element.
         let contentTab = startTab + tab
 
@@ -74,15 +80,32 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
         let closingArrayIndex = text.lastIndex(of: "]")
 
         /// Determine if the selection was an array or a set of parameters.
-        let openingBracesIndex: String.Index? = [openingParenthesisIndex, openingArrayIndex]
-            .compactMap { $0 }
-            .sorted()
-            .first
+        /// Only use the opening brace for comparison.
+        var selectionKind: SelectionKind
+        switch (openingParenthesisIndex, openingArrayIndex) {
+        case let (.some(openingParenthesisIndex), .some(openingArrayIndex)):
+            if openingParenthesisIndex < openingArrayIndex {
+                selectionKind = .parameters
+            } else {
+                selectionKind = .array
+            }
+        case (.some, .none):
+            selectionKind = .parameters
+        case (.none, .some):
+            selectionKind = .array
+        default:
+            completionHandler(FormatError.noSelection)
+            return
+        }
 
-        let closingBracesIndex: String.Index? = [closingParenthesisIndex, closingArrayIndex]
-            .compactMap { $0 }
-            .sorted()
-            .last
+        /// Determine if the selection was an array or a set of parameters.
+        let openingBracesIndex: String.Index? = selectionKind == .parameters
+            ? openingParenthesisIndex
+            : openingArrayIndex
+
+        let closingBracesIndex: String.Index? = selectionKind == .parameters
+            ? closingParenthesisIndex
+            : closingArrayIndex
 
         /// Make sure there's an opening and closing index.
         guard let openingBracesIndex = openingBracesIndex, let closingBracesIndex = closingBracesIndex else {
@@ -139,7 +162,6 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
     func getText(from range: XCSourceTextRange, buffer: XCSourceTextBuffer) -> String {
         let allLines = getLines(from: buffer)
         let lines = allLines[range.start.line ... range.end.line]
-
         let text = lines.map { String($0) }.joined()
         return text
     }
