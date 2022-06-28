@@ -42,7 +42,7 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
         /// Get the selection first.
         guard
             let selection = invocation.buffer.selections.firstObject,
-            var range = selection as? XCSourceTextRange
+            let range = selection as? XCSourceTextRange
         else {
             completionHandler(FormatError.noSelection)
             return

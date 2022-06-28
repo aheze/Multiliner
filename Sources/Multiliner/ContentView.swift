@@ -12,9 +12,9 @@ struct ContentView: View {
     var body: some View {
         ScrollView {
             VStack(alignment: .leading) {
-                Link(destination: URL(string: "https://github.com/aheze/Multiliner")!) {
-                    Text("View on GitHub")
-                }
+                Image("Banner")
+                    .resizable()
+                    .aspectRatio(contentMode: .fit)
 
                 Text("Multiliner")
                     .font(.largeTitle)
@@ -90,8 +90,26 @@ struct ContentView: View {
             maxHeight: .infinity,
             alignment: .leading
         )
-
         .navigationTitle("Multiliner")
+        .toolbar {
+            ToolbarItemGroup(placement: .primaryAction) {
+                Button {
+                    if let url = URL(string: "https://github.com/aheze/Multiliner") {
+                        NSWorkspace.shared.open(url)
+                    }
+                } label: {
+                    Text("View on GitHub")
+                }
+
+                Button {
+                    if let url = URL(string: "https://github.com/aheze/Multiliner/issues") {
+                        NSWorkspace.shared.open(url)
+                    }
+                } label: {
+                    Text("Help")
+                }
+            }
+        }
     }
 }
 
