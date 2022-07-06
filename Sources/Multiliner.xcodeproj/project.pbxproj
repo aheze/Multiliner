@@ -10,7 +10,6 @@
 		3C08D42E286A3F160068FA83 /* MultilinerApp.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C08D42D286A3F160068FA83 /* MultilinerApp.swift */; };
 		3C08D430286A3F160068FA83 /* ContentView.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C08D42F286A3F160068FA83 /* ContentView.swift */; };
 		3C08D432286A3F190068FA83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C08D431286A3F190068FA83 /* Assets.xcassets */; };
-		3C08D435286A3F190068FA83 /* Preview Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C08D434286A3F190068FA83 /* Preview Assets.xcassets */; };
 		3C08D443286A3F3D0068FA83 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C08D442286A3F3D0068FA83 /* Cocoa.framework */; };
 		3C08D448286A3F3D0068FA83 /* SourceEditorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C08D447286A3F3D0068FA83 /* SourceEditorExtension.swift */; };
 		3C08D44A286A3F3D0068FA83 /* SourceEditorCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C08D449286A3F3D0068FA83 /* SourceEditorCommand.swift */; };
@@ -59,7 +58,6 @@
 		3C08D42D286A3F160068FA83 /* MultilinerApp.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = MultilinerApp.swift; sourceTree = "<group>"; };
 		3C08D42F286A3F160068FA83 /* ContentView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ContentView.swift; sourceTree = "<group>"; };
 		3C08D431286A3F190068FA83 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
-		3C08D434286A3F190068FA83 /* Preview Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = "Preview Assets.xcassets"; sourceTree = "<group>"; };
 		3C08D436286A3F190068FA83 /* Multiliner.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = Multiliner.entitlements; sourceTree = "<group>"; };
 		3C08D440286A3F3D0068FA83 /* Multiliner.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = Multiliner.appex; sourceTree = BUILT_PRODUCTS_DIR; };
 		3C08D442286A3F3D0068FA83 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
@@ -116,17 +114,8 @@
 				3C08D42F286A3F160068FA83 /* ContentView.swift */,
 				3C08D431286A3F190068FA83 /* Assets.xcassets */,
 				3C08D436286A3F190068FA83 /* Multiliner.entitlements */,
-				3C08D433286A3F190068FA83 /* Preview Content */,
 			);
 			path = Multiliner;
-			sourceTree = "<group>";
-		};
-		3C08D433286A3F190068FA83 /* Preview Content */ = {
-			isa = PBXGroup;
-			children = (
-				3C08D434286A3F190068FA83 /* Preview Assets.xcassets */,
-			);
-			path = "Preview Content";
 			sourceTree = "<group>";
 		};
 		3C08D441286A3F3D0068FA83 /* Frameworks */ = {
@@ -231,7 +220,6 @@
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
-				3C08D435286A3F190068FA83 /* Preview Assets.xcassets in Resources */,
 				3C08D432286A3F190068FA83 /* Assets.xcassets in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -395,16 +383,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Multiliner/Multiliner.entitlements;
-				CODE_SIGN_IDENTITY = "-";
-				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
+				CODE_SIGN_IDENTITY = "Apple Development";
+				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Multiliner/Preview Content\"";
 				DEVELOPMENT_TEAM = YA533DMD5J;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Multiliner;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -413,6 +401,7 @@
 				MARKETING_VERSION = 1.0;
 				PRODUCT_BUNDLE_IDENTIFIER = com.aheze.Multiliner;
 				PRODUCT_NAME = "Multiliner App";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_EMIT_LOC_STRINGS = YES;
 				SWIFT_VERSION = 5.0;
 			};
@@ -425,16 +414,16 @@
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				ASSETCATALOG_COMPILER_GLOBAL_ACCENT_COLOR_NAME = AccentColor;
 				CODE_SIGN_ENTITLEMENTS = Multiliner/Multiliner.entitlements;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				"CODE_SIGN_IDENTITY[sdk=macosx*]" = "-";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
-				DEVELOPMENT_ASSET_PATHS = "\"Multiliner/Preview Content\"";
 				DEVELOPMENT_TEAM = YA533DMD5J;
 				ENABLE_HARDENED_RUNTIME = YES;
 				ENABLE_PREVIEWS = YES;
 				GENERATE_INFOPLIST_FILE = YES;
+				INFOPLIST_KEY_CFBundleDisplayName = Multiliner;
 				INFOPLIST_KEY_NSHumanReadableCopyright = "";
 				LD_RUNPATH_SEARCH_PATHS = (
 					"$(inherited)",
@@ -452,7 +441,7 @@
 			isa = XCBuildConfiguration;
 			buildSettings = {
 				CODE_SIGN_ENTITLEMENTS = MultilinerExtension/MultilinerExtension.entitlements;
-				CODE_SIGN_IDENTITY = "-";
+				CODE_SIGN_IDENTITY = "Apple Development";
 				CODE_SIGN_STYLE = Automatic;
 				COMBINE_HIDPI_IMAGES = YES;
 				CURRENT_PROJECT_VERSION = 1;
