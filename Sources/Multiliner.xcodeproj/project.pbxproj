@@ -12,10 +12,13 @@
 		3C08D432286A3F190068FA83 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 3C08D431286A3F190068FA83 /* Assets.xcassets */; };
 		3C08D443286A3F3D0068FA83 /* Cocoa.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C08D442286A3F3D0068FA83 /* Cocoa.framework */; };
 		3C08D448286A3F3D0068FA83 /* SourceEditorExtension.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C08D447286A3F3D0068FA83 /* SourceEditorExtension.swift */; };
-		3C08D44A286A3F3D0068FA83 /* SourceEditorCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C08D449286A3F3D0068FA83 /* SourceEditorCommand.swift */; };
+		3C08D44A286A3F3D0068FA83 /* FormatSelectedCodeCommand.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3C08D449286A3F3D0068FA83 /* FormatSelectedCodeCommand.swift */; };
 		3C08D44F286A3F3D0068FA83 /* Multiliner.appex in Embed App Extensions */ = {isa = PBXBuildFile; fileRef = 3C08D440286A3F3D0068FA83 /* Multiliner.appex */; settings = {ATTRIBUTES = (RemoveHeadersOnCopy, ); }; };
 		3C3D5B63286A40E900B92FEA /* XcodeKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 3C08D444286A3F3D0068FA83 /* XcodeKit.framework */; };
 		3C3D5B64286A40E900B92FEA /* XcodeKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = 3C08D444286A3F3D0068FA83 /* XcodeKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		3CFEC80428753F6C0069D8C6 /* FormatError.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFEC80328753F6C0069D8C6 /* FormatError.swift */; };
+		3CFEC80628753F7B0069D8C6 /* SelectionKind.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFEC80528753F7B0069D8C6 /* SelectionKind.swift */; };
+		3CFEC80A287540390069D8C6 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = 3CFEC809287540390069D8C6 /* Extensions.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -63,9 +66,12 @@
 		3C08D442286A3F3D0068FA83 /* Cocoa.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = Cocoa.framework; path = System/Library/Frameworks/Cocoa.framework; sourceTree = SDKROOT; };
 		3C08D444286A3F3D0068FA83 /* XcodeKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = XcodeKit.framework; path = Library/Frameworks/XcodeKit.framework; sourceTree = DEVELOPER_DIR; };
 		3C08D447286A3F3D0068FA83 /* SourceEditorExtension.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceEditorExtension.swift; sourceTree = "<group>"; };
-		3C08D449286A3F3D0068FA83 /* SourceEditorCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SourceEditorCommand.swift; sourceTree = "<group>"; };
+		3C08D449286A3F3D0068FA83 /* FormatSelectedCodeCommand.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatSelectedCodeCommand.swift; sourceTree = "<group>"; };
 		3C08D44B286A3F3D0068FA83 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		3C08D44C286A3F3D0068FA83 /* MultilinerExtension.entitlements */ = {isa = PBXFileReference; lastKnownFileType = text.plist.entitlements; path = MultilinerExtension.entitlements; sourceTree = "<group>"; };
+		3CFEC80328753F6C0069D8C6 /* FormatError.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FormatError.swift; sourceTree = "<group>"; };
+		3CFEC80528753F7B0069D8C6 /* SelectionKind.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SelectionKind.swift; sourceTree = "<group>"; };
+		3CFEC809287540390069D8C6 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -130,8 +136,11 @@
 		3C08D446286A3F3D0068FA83 /* MultilinerExtension */ = {
 			isa = PBXGroup;
 			children = (
+				3CFEC80328753F6C0069D8C6 /* FormatError.swift */,
+				3CFEC80528753F7B0069D8C6 /* SelectionKind.swift */,
+				3CFEC809287540390069D8C6 /* Extensions.swift */,
 				3C08D447286A3F3D0068FA83 /* SourceEditorExtension.swift */,
-				3C08D449286A3F3D0068FA83 /* SourceEditorCommand.swift */,
+				3C08D449286A3F3D0068FA83 /* FormatSelectedCodeCommand.swift */,
 				3C08D44B286A3F3D0068FA83 /* Info.plist */,
 				3C08D44C286A3F3D0068FA83 /* MultilinerExtension.entitlements */,
 			);
@@ -247,8 +256,11 @@
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				3CFEC80428753F6C0069D8C6 /* FormatError.swift in Sources */,
+				3CFEC80A287540390069D8C6 /* Extensions.swift in Sources */,
 				3C08D448286A3F3D0068FA83 /* SourceEditorExtension.swift in Sources */,
-				3C08D44A286A3F3D0068FA83 /* SourceEditorCommand.swift in Sources */,
+				3CFEC80628753F7B0069D8C6 /* SelectionKind.swift in Sources */,
+				3C08D44A286A3F3D0068FA83 /* FormatSelectedCodeCommand.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -398,7 +410,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.aheze.Multiliner;
 				PRODUCT_NAME = "Multiliner App";
 				PROVISIONING_PROFILE_SPECIFIER = "";
@@ -429,7 +441,7 @@
 					"$(inherited)",
 					"@executable_path/../Frameworks",
 				);
-				MARKETING_VERSION = 1.0;
+				MARKETING_VERSION = 1.1;
 				PRODUCT_BUNDLE_IDENTIFIER = com.aheze.Multiliner;
 				PRODUCT_NAME = "Multiliner App";
 				SWIFT_EMIT_LOC_STRINGS = YES;

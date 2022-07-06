@@ -9,34 +9,7 @@
 import Foundation
 import XcodeKit
 
-enum FormatError: Error, CustomStringConvertible, LocalizedError, CustomNSError {
-    case noSelection
-    case invalidSelection
-
-    var description: String {
-        switch self {
-        case .noSelection:
-            return "No selection."
-        case .invalidSelection:
-            return "Selection must be bounded by `()` or `[]`."
-        }
-    }
-
-    var localizedDescription: String {
-        return "Error: \(description)."
-    }
-
-    var errorUserInfo: [String: Any] {
-        return [NSLocalizedDescriptionKey: localizedDescription]
-    }
-}
-
-enum SelectionKind {
-    case parameters
-    case array
-}
-
-class SourceEditorCommand: NSObject, XCSourceEditorCommand {
+class FormatSelectedCodeCommand: NSObject, XCSourceEditorCommand {
     /// The `Format Selected Code` command.
     func perform(with invocation: XCSourceEditorCommandInvocation, completionHandler: @escaping (Error?) -> Void) {
         /// Get the selection first.
@@ -168,26 +141,12 @@ class SourceEditorCommand: NSObject, XCSourceEditorCommand {
         invocation.buffer.selections.removeAllObjects()
         invocation.buffer.selections.add(
             XCSourceTextRange(
-                start: XCSourceTextPosition(line: range.start.line, column: startColumn),
+                start: XCSourceTextPosition(line: range.start.line, column: startColumn - 1),
                 end: XCSourceTextPosition(line: range.start.line + newLines.count - 1, column: closingString.count - 1)
             )
         )
 
         /// Success!
         completionHandler(nil)
-    }
-
-    /// Get the lines of an entire files as an array of `String`s.
-    func getLines(from buffer: XCSourceTextBuffer) -> [String] {
-        guard let lines = buffer.lines as? [String] else { return [] }
-        return lines
-    }
-
-    /// Get a single string from a range.
-    func getText(from range: XCSourceTextRange, buffer: XCSourceTextBuffer) -> String {
-        let allLines = getLines(from: buffer)
-        let lines = allLines[range.start.line ... range.end.line]
-        let text = lines.map { String($0) }.joined()
-        return text
     }
 }
