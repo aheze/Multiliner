@@ -4,7 +4,7 @@
 
 An Xcode source extension to expand lengthy lines.
 
-- Super lightweight, 1 file.
+- Super lightweight, it's like a script.
 - It expands long lines. That's it!
 - Works with:
   - Initializers
@@ -18,7 +18,7 @@ https://user-images.githubusercontent.com/49819455/176060861-4bab03cc-a953-4839-
 
 ### Installation
 
-1. Download the app [here](https://github.com/aheze/Multiliner/raw/main/Multiliner.zip)
+1. Download the app here: [Multiliner.zip](https://github.com/aheze/Multiliner/raw/main/Multiliner.zip)
 2. Open the app
 3. Go to System Preferences → Extensions and check `MultilinerExtension`
 
@@ -26,7 +26,7 @@ https://user-images.githubusercontent.com/49819455/176060861-4bab03cc-a953-4839-
 
 ### Usage
 
-It's simple, just highlight the code that you want to format and press Editor → Multiliner → Format Selected Code. More instructions in the app.
+It's simple, just highlight the code that you want to format, then press <kbd>Editor</kbd> → <kbd>Multiliner</kbd> → <kbd>Format Selected Code</kbd>. More details in the app.
 
 <img src="Assets/App.png" width="500" alt="Screenshot of the app">
 
