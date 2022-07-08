@@ -32,7 +32,7 @@ It's simple, just highlight the code that you want to format, then press <kbd>Ed
 
 ### Set shortcut
 
-Go to <kbd>Xcode</kbd> → <kbd>Preferences</kbd> → <kbd>Key Bindings</kbd>, search multiliner to set shortcut
+Go to <kbd>Xcode</kbd> → <kbd>Preferences</kbd> → <kbd>Key Bindings</kbd>, then search for "Multiliner":
 
 <img src="https://user-images.githubusercontent.com/52348220/178054971-ee2ab145-cea2-4765-aafb-56b177f9ea8f.png" width="500" alt="Shortcut setting on Xcode">
 
