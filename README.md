@@ -30,6 +30,12 @@ It's simple, just highlight the code that you want to format, then press <kbd>Ed
 
 <img src="Assets/App.png" width="500" alt="Screenshot of the app">
 
+### Set shortcut
+
+Go to <kbd>Xcode</kbd> → <kbd>Preferences</kbd> → <kbd>Key Bindings</kbd>, search multiliner to set shortcut
+
+<img src="https://user-images.githubusercontent.com/52348220/178054971-ee2ab145-cea2-4765-aafb-56b177f9ea8f.png" width="500" alt="Shortcut setting on Xcode">
+
 
 ### Author
 Multiliner is made by [aheze](https://github.com/aheze).
