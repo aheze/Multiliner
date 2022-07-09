@@ -1,6 +1,6 @@
 ![Header image](Assets/Banner.png)
 
-# Multiliner
+# Multiliner 
 
 An Xcode source extension to expand lengthy lines.
 
@@ -18,7 +18,7 @@ https://user-images.githubusercontent.com/49819455/176060861-4bab03cc-a953-4839-
 
 ### Installation
 
-1. Download the app here: [Multiliner.zip](https://github.com/aheze/Multiliner/raw/main/Multiliner.zip)
+1. <a href="https://github.com/aheze/Multiliner/raw/main/Multiliner.zip"><kbd>Download the app</kbd></a>
 2. Open the app
 3. Go to System Preferences → Extensions and check `Multiliner`
 
