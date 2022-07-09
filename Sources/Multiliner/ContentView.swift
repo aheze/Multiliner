@@ -53,7 +53,9 @@ struct ContentView: View {
                             .resizable()
                             .aspectRatio(contentMode: .fit)
                     }
-
+                    
+                    Spacer().frame(height: 25)
+                    
                     Group {
                         Text("2. Then, go to Editor → Multiliner → Format Selected Code. Your code will get reformatted!")
                             .font(.title3)
@@ -68,8 +70,11 @@ struct ContentView: View {
                                 .aspectRatio(contentMode: .fit)
                         }
                     }
+                    
+                    Spacer().frame(height: 25)
+                    
                     Group {
-                        Text("3. To make this extension easier to reach, consider adding an App Shortcut in system preferences.")
+                        Text("3. To make this extension easier to reach, consider adding a shortcut in Xcode's Key Bindings.")
                             .font(.title3)
 
                         Image("UsageShortcut")
