@@ -20,7 +20,7 @@ https://user-images.githubusercontent.com/49819455/176060861-4bab03cc-a953-4839-
 
 1. Download the app here: [Multiliner.zip](https://github.com/aheze/Multiliner/raw/main/Multiliner.zip)
 2. Open the app
-3. Go to System Preferences → Extensions and check `MultilinerExtension`
+3. Go to System Preferences → Extensions and check `Multiliner`
 
 <img src="Assets/Preferences.png" width="500" alt="System Preferences">
 
