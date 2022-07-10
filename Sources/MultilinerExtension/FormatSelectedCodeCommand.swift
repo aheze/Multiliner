@@ -64,11 +64,11 @@ class FormatSelectedCodeCommand: NSObject, XCSourceEditorCommand {
 
         /// Get the opening and closing indices if the selected text contains parameters.
         let openingParenthesisIndex = text.firstIndex(of: "(")
-        let closingParenthesisIndex = text.lastIndex(of: ")")
+        let closingParenthesisIndex = text.firstIndex(of: ")")
 
         /// Get the opening and closing array element if the selected text is an array.
         let openingArrayIndex = text.firstIndex(of: "[")
-        let closingArrayIndex = text.lastIndex(of: "]")
+        let closingArrayIndex = text.firstIndex(of: "]")
 
         /// Determine if the selection was an array or a set of parameters.
         /// Only use the opening brace for comparison.
