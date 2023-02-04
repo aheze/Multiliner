@@ -18,7 +18,13 @@ https://user-images.githubusercontent.com/49819455/176060861-4bab03cc-a953-4839-
 
 ### Installation
 
-1. <a href="https://github.com/aheze/Multiliner/raw/main/Multiliner.zip">Download the app</a>
+1. Download the app [directly](https://github.com/aheze/Multiliner/raw/main/Multiliner.zip) or through Homebrew
+
+   ```bash
+   brew tap hkamran80/things
+   brew install multiliner
+   ```
+
 2. Open the app
 3. Go to System Preferences → Extensions and check `Multiliner`
 
