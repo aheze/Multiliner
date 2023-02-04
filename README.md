@@ -25,6 +25,8 @@ https://user-images.githubusercontent.com/49819455/176060861-4bab03cc-a953-4839-
    brew install multiliner
    ```
 
+   **Note:** Multiliner requires macOS Monterey (12.3) or higher.
+
 2. Open the app
 3. Go to System Preferences → Extensions and check `Multiliner`
 
@@ -44,17 +46,20 @@ If you'd like to access Multiliner quicker, try adding a key binding. Go to <kbd
 
 
 ### Author
+
 Multiliner is made by [aheze](https://github.com/aheze).
 
 ### Contributing
+
 All contributions are welcome. Just [fork](https://github.com/aheze/Multiliner/fork) the repo, then make a pull request.
 
 ### Need Help?
+
 Open an [issue](https://github.com/aheze/Multiliner/issues) or join the [Discord server](https://discord.com/invite/Pmq8fYcus2). You can also ping me on [Twitter](https://twitter.com/aheze0). Or read the source code, I added a bunch of comments.
 
 ### License
 
-```
+```text
 MIT License
 
 Copyright (c) 2022 A. Zheng
