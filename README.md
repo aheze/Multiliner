@@ -21,8 +21,7 @@ https://user-images.githubusercontent.com/49819455/176060861-4bab03cc-a953-4839-
 1. Download the app [directly](https://github.com/aheze/Multiliner/raw/main/Multiliner.zip) or through Homebrew
 
    ```bash
-   brew tap hkamran80/things
-   brew install multiliner
+   brew install hkamran80/things/multiliner
    ```
 
    **Note:** Multiliner requires macOS Monterey (12.3) or higher.
